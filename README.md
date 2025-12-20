@@ -9,6 +9,9 @@
 - **Auto-fit** image to window on load
 - Lightweight and fast
 
+## Compatibility
+- Linux (Debian, RHEL, Arch)
+
 ## Installation
 1. **Clone the repository:**
 ```bash
@@ -36,7 +39,7 @@ This will:
 iris image1.jpg image2.png
 ```
 - Use **Right/Left arrows** to switch images
-- Use `+` / `-` **keys** or **mouse wheel** to zoom
+- Use `+` / `-` **keys** or **mouse wheel** to zoom in and out
 - Click and drag with **left mouse button to pan**
 
 ## Uninstall
