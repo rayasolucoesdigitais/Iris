@@ -7,6 +7,10 @@
 - Zoom in and out using **keyboard** (`+` / `-`) or **mouse wheel**
 - Pan images with the **mouse**
 - **Auto-fit** image to window on load
+- Rotate images using `Q` / `E` keys
+- Flip images horizontally and vertically using `H` / `V` keys
+- Reset transform with `R` key
+- Auto-fit on window resize
 - Lightweight and fast
 
 ## Compatibility
@@ -41,6 +45,10 @@ iris image1.jpg image2.png
 - Use **Right/Left arrows** to switch images
 - Use `+` / `-` **keys** or **mouse wheel** to zoom in and out
 - Click and drag with **left mouse button to pan**
+- Use `Q` / `E` keys to rotate images
+- Use `H` / `V` keys to flip images horizontally and vertically
+- Use `R` key to reset image transform (zoom, rotation, flip)
+- Window resizing will auto-fit the image to the new window size
 
 ## Uninstall
 To remove Iris:
