@@ -26,13 +26,24 @@ static void load_current(app *a) {
     int win_w, win_h;
     SDL_GetWindowSize(a->window, &win_w, &win_h);
 
-    float zoom_x = (float)win_w / a->img_w;
-    float zoom_y = (float)win_h / a->img_h;
+    int iw = a->img_w;
+    int ih = a->img_h;
+
+    if (((int)a->rotation % 180) != 0) {
+       int tmp = iw;
+       iw = ih;
+       ih = tmp;
+    }
+
+    float zoom_x = (float)win_w / iw;
+    float zoom_y = (float)win_h / ih;
 
     a->zoom = (zoom_x < zoom_y) ? zoom_x : zoom_y;
 
     a->offset_x = 0;
     a->offset_y = 0;
+    a->rotation = 0.0;
+    a->flip = SDL_FLIP_NONE;
 }
 
 static void draw(app *a) {
@@ -46,7 +57,15 @@ static void draw(app *a) {
     dst.y = win_h / 2 - dst.h / 2 + (int)a->offset_y;
 
     SDL_RenderClear(a->renderer);
-    SDL_RenderCopy(a->renderer, a->texture, NULL, &dst);
+    SDL_RenderCopyEx(
+    a->renderer,
+    a->texture,
+    NULL,
+    &dst,
+    a->rotation,
+    NULL,
+    a->flip
+    );
     SDL_RenderPresent(a->renderer);
 }
 
@@ -59,6 +78,9 @@ void app_init(app *a, char **files, int count) {
     a->file_count = count;
     a->file_index = 0;
     a->texture = NULL;
+    a->rotation = 0.0;
+    a->flip = SDL_FLIP_NONE;
+    a->dragging = 0;
 
     a->window = SDL_CreateWindow(
         "Iris",
@@ -88,7 +110,9 @@ void app_run(app *a) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) run = 0;
-
+            if (e.type == SDL_WINDOWEVENT && e.window.event == SDL_WINDOWEVENT_RESIZED) {
+               load_current(a);
+            }
             if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
                     case SDLK_ESCAPE:
@@ -115,6 +139,29 @@ void app_run(app *a) {
                     case SDLK_KP_MINUS:
                         a->zoom *= 0.9f;
                         break;
+
+                    case SDLK_q:
+                        a->rotation -= 90.0;
+                        if (a->rotation < 0) a->rotation += 360.0;
+                        break;
+
+                    case SDLK_e:
+                        a->rotation += 90.0;
+                        if (a->rotation >= 360.0) a->rotation -= 360.0;
+                        break;
+
+                    case SDLK_h:
+                        a->flip ^= SDL_FLIP_HORIZONTAL;
+                        break;
+
+                    case SDLK_v:
+                        a->flip ^= SDL_FLIP_VERTICAL;
+                        break;
+
+                    case SDLK_r:
+                        load_current(a);
+                        break;
+
                 }
 
                 if (a->zoom < 0.05f) a->zoom = 0.05f;

@@ -18,6 +18,9 @@ typedef struct {
     float offset_x;
     float offset_y;
 
+    double rotation;
+    SDL_RendererFlip flip;
+
     int dragging;
     int last_x;
     int last_y;
